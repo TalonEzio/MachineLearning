@@ -38,6 +38,9 @@ def learn(df:pd.DataFrame,testSizePercent:int):
     plt.plot([0, 100], [0, 100], color='red', linestyle='--')
     plt.show()
 
+    # saveImagePath :str = os.path.dirname(__file__)  +"\\Output\\"
+    # fileName : str = os.path.join(saveImagePath,f"train {testSizePercent / 100}.png")
+    # plt.savefig(fileName)
 
 
 # đọc csv
