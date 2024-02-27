@@ -41,7 +41,8 @@ def learn(df: pd.DataFrame, testSizePercent: int, columnX, columnY):
     plt.scatter(df[columnX[0]], df[columnX[1]], c=df[columnY])
     plt.xlabel('Chiều dài đài hoa')
     plt.ylabel('Chiều rộng đài hoa')
-    plt.title(f"Biểu đồ phân tán (test_size = {testSizePercent}%)")
+    plt.title(f"Iris (test_size = {testSizePercent}%)")
+
     plt.show()
 
 # đọc csv

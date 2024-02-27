@@ -32,8 +32,11 @@ def learn(df: pd.DataFrame, testSizePercent: int, columnX, columnY):
     plt.xlim(0, 120)
     plt.ylim(0, 120)
     plt.scatter(y_test, y_pred)
+    plt.title(f"Biểu đồ dự đoán giá cước (test_size = {testSizePercent}%)")
     plt.xlabel("Giá cước thực tế")
     plt.ylabel("Giá cước dự đoán")
+    plt.plot( [0,120],[0,120],color='red', linestyle='--')
+
     plt.show()
 
 
@@ -45,6 +48,6 @@ df["payment_type_num"] = LabelEncoder().fit_transform(df["payment_type"])
 columnX = ["passenger_count", "trip_time_in_secs", "trip_distance", "rate_code", "payment_type_num"]
 columnY = "fare_amount"
 
-# for i in range(5,10):
-#     learn(df, i  * 10, columnX, columnY)
-learn(df, 8  * 10, columnX, columnY)
+for i in range(3,10):
+    learn(df, i  * 10, columnX, columnY)
+# learn(df, 3  * 10, columnX, columnY)
